@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Life Planner</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
 </head>
 <body>
   <header>
@@ -17,14 +18,13 @@
     <section class="left">
       <div class="daily">
         <h2>Daily</h2>
-        <div class="spotify">
-          <iframe style="border-radius:12px" 
-            src="https://open.spotify.com/embed/playlist/37i9dQZF1DX3rxVfibe1L0" 
-            width="100%" height="152" frameborder="0" allowfullscreen="" 
-            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-            loading="lazy">
-          </iframe>
-        </div>
+        <div class="spotify chatbot">
+  <h3>Chatbot</h3>
+  <div id="chatbox" class="chatbox"></div>
+  <input type="text" id="userInput" placeholder="Type a message..." onkeydown="if(event.key==='Enter') sendMessage()" />
+  <button onclick="sendMessage()">Send</button>
+</div>
+
         <h3>Priorities</h3>
         <ul>
           <li>Focus on YT</li>
@@ -42,11 +42,16 @@
       <div class="moodboard">
         <h2>Moodboard</h2>
         <div class="goals-grid">
-          <div class="goal">🏡 Home aesthetics</div>
-          <div class="goal">🧘 Health</div>
-          <div class="goal">📚 Read more</div>
-          <div class="goal">👯 Make friends</div>
-          <div class="goal">✈️ Traveling</div>
+          <div class="goal"> My Pet</div>
+          <div class="goal health-card">
+            <a href="healthTracker.html">
+              <div class="overlay">
+                <span class="emoji">🧘</span>
+                <span class="text">Health</span>
+              </div>
+            </a>
+          </div>
+
           <div class="goal">🎨 Paint more</div>
           <div class="goal">🐰 Routine</div>
           <div class="goal">💰 Finances</div>
@@ -91,5 +96,52 @@
       
     </section>
   </main>
+  <script>
+    async function sendMessage() {
+  const input = document.getElementById('userInput');
+  const chatbox = document.getElementById('chatbox');
+  const message = input.value.trim();
+  if (!message) return;
+
+  // Append user message
+  chatbox.innerHTML += `<div class="user-message"><b>You:</b> ${escapeHtml(message)}</div>`;
+
+  // Scroll chatbox to bottom
+  chatbox.scrollTop = chatbox.scrollHeight;
+
+  // Clear input
+  input.value = '';
+  input.disabled = true; // disable input while waiting
+
+  try {
+    const response = await fetch('/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+
+    // Append bot reply
+    chatbox.innerHTML += `<div class="bot-message"><b>Bot:</b> ${escapeHtml(data.reply)}</div>`;
+
+  } catch (err) {
+    chatbox.innerHTML += `<div class="bot-message error"><b>Bot:</b> Error communicating with server.</div>`;
+  } finally {
+    input.disabled = false;
+    input.focus();
+    chatbox.scrollTop = chatbox.scrollHeight;
+  }
+}
+
+// Simple escape to avoid HTML injection (optional but recommended)
+function escapeHtml(text) {
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+  </script>
 </body>
+
 </html>

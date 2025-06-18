@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Health Tracker</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    textarea {
+      width: 100%;
+      height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <h1> Your Health Status</h1>
+  
+  <form id="healthForm">
+    <label for="status">Enter your health update:</label><br><br>
+    <textarea id="status" name="status" placeholder="e.g., Walked 5km today, feeling great!"></textarea><br><br>
+    <button type="submit">Save</button>
+  </form>
+
+  <h2>📋 Saved Status:</h2>
+  <p id="savedStatus"></p>
+
+  <script>
+    const form = document.getElementById('healthForm');
+    const savedStatus = document.getElementById('savedStatus');
+    const statusInput = document.getElementById('status');
+
+    // Load previously saved status
+    window.onload = () => {
+      const saved = localStorage.getItem('healthStatus');
+      if (saved) savedStatus.textContent = saved;
+    };
+
+    // Save status on form submit
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const status = statusInput.value.trim();
+      if (status) {
+        localStorage.setItem('healthStatus', status);
+        savedStatus.textContent = status;
+        statusInput.value = '';
+        alert('Health status saved!');
+      }
+    });
+  </script>
+</body>
+</html>
