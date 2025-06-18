@@ -64,13 +64,25 @@
     </section>
 
     <section class="right">
-      <h2>Today</h2>
-      <ul class="schedule">
-        <li>07 - Journal</li>
-        <li>09 - Breakfast</li>
-        <li>12 - Lunch</li>
-        <li>17 - Dinner</li>
-      </ul>
+     <h2>📚 Time Table Scheduler</h2>
+      <div class="timetable-container">
+        <table id="timetable">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+           </tr>
+          </thead>
+          <tbody>
+          </tbody>
+       </table>
+       <button onclick="saveSchedule()">Save Schedule</button>
+      </div>
+      <script src="timetablescript.js"></script>
 
       <div class="finance">
         <h3>Finance</h3>
