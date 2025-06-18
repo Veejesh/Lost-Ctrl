@@ -144,3 +144,39 @@ iframe {
   border-radius: 10px;
   box-shadow: 10px, 10px, 10px, black;
 }
+
+.chatbot {
+  margin-top: 1rem;
+  padding: 1rem;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  font-family: sans-serif;
+}
+
+#chatbox {
+  height: 150px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#userInput {
+  width: calc(100% - 80px);
+  padding: 8px;
+  margin-right: 4px;
+  border-radius: 6px;
+  border: 1px solid #aaa;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
