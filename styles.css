@@ -170,7 +170,7 @@ button {
   width: 100%;
   padding: 12px;
   font-size: 16px;
-  background-color: #4a90e2;
+  background-color: #d3aa78;
   color: white;
   border: none;
   border-radius: 8px;
@@ -179,7 +179,7 @@ button {
 }
 
 button:hover {
-  background-color: #357ABD;
+  background-color: #f1e67a;
 }
 
 #confirmation {
