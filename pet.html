@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Pet - PetPal</title>
+  <link rel="stylesheet" href="petstyle.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Fluff bar🐾</h1>
+    <form id="name-form" onsubmit="submitName(event)">
+      <h2>Name Your Pet 🐾</h2>
+      <input type="text" id="name-input" placeholder="Enter pet name..." required />
+     <button type="submit">Start</button>
+    </form>
+
+    <div class="pet-area" style="display: none;">
+      <img id="pet" src="images\cat2.png" alt="Pet" />
+      <div id="name-form">
+      <p>Name: <span id="pet-name"></span></p>
+      <p>Hunger: <span id="hunger">50</span></p>
+      <p>Cleanliness: <span id="cleanliness">80</span></p>
+    </div>
+
+    <div class="controls">
+      <button onclick="feedPet()">🍖 Feed</button>
+      <button onclick="cleanPet()">🛁 Clean</button>
+      <div id="message-box" class="message-box"></div>
+    </div>
+  </div>
+
+  <script src="petscript.js"></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+body {
+  font-family: 'Times New Roman', serif;
+  background-color: #fef6e4;
+  text-align: center;
+  padding: 30px;
+}
+
+.container {
+  max-width: 400px;
+  margin: auto;
+  background-color: #fff5d7;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.pet-area img {
+  width: 150px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.controls button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: #d7ba6f;
+  color: #fff;
+}
+
+.controls button:hover {
+  background-color: #fb8500;
+}
+
+#name-form {
+  background-color: #fff3c4;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#name-input {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d8c6b2;
+  margin-right: 10px;
+}
+
+.message-box {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  color: #333;
+  background-color: #e9f5db;
+  padding: 10px;
+  border-radius: 10px;
+  min-height: 30px;
+}
