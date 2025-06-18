@@ -76,6 +76,52 @@ section {
   font-size: 0.9rem;
 }
 
+/* Health card custom style */
+.health-card {
+  position: relative;
+  background-image: url('images/homepage.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.health-card:hover {
+  transform: scale(1.03);
+}
+
+.health-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.health-card .overlay {
+  background: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding-top: 25px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #333;
+}
+
+.health-card .emoji {
+  font-size: 1.8em;
+  display: block;
+}
+
+.health-card .text {
+  font-weight: bold;
+  margin-top: 5px;
+  font-size: 1em;
+}
+
+
 form {
   background-color: #ffffff;
   padding: 25px 30px;
