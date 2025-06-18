@@ -42,11 +42,16 @@
       <div class="moodboard">
         <h2>Moodboard</h2>
         <div class="goals-grid">
-          <div class="goal">🏡 Home aesthetics</div>
-          <div class="goal">🧘 Health</div>
-          <div class="goal">📚 Read more</div>
-          <div class="goal">👯 Make friends</div>
-          <div class="goal">✈️ Traveling</div>
+          <div class="goal"> My Pet</div>
+          <div class="goal health-card">
+            <a href="healthTracker.html">
+              <div class="overlay">
+                <span class="emoji">🧘</span>
+                <span class="text">Health</span>
+              </div>
+            </a>
+          </div>
+
           <div class="goal">🎨 Paint more</div>
           <div class="goal">🐰 Routine</div>
           <div class="goal">💰 Finances</div>
@@ -60,18 +65,15 @@
         <button type="submit">Submit</button>
       </form>
       <div id="confirmation"></div>
-
-      <div class="personal">
-        <h3>Personal</h3>
-        <ul>
-          <li>Notes</li>
-          <li>Important documents</li>
-          <li>Grocery list</li>
-        </ul>
-      </div>
     </section>
-
     <section class="right">
+      <h2>Today</h2>
+      <ul class="schedule">
+        <li>07 - Journal</li>
+        <li>09 - Breakfast</li>
+        <li>12 - Lunch</li>
+        <li>17 - Dinner</li>
+      </ul>
 
       <div class="finance">
         <h3>Games</h3>
@@ -130,4 +132,5 @@ function escapeHtml(text) {
 
   </script>
 </body>
+
 </html>
